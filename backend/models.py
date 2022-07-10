@@ -18,4 +18,4 @@ class Messages(models.Model):
 
 class RepliesRelation(models.Model):
     message = models.ForeignKey(Messages, on_delete=models.CASCADE)
-    reply = models.ForeignKey(Messages, on_delete=models.CASCADE)
+    reply = models.ForeignKey(Messages, on_delete=models.CASCADE, related_name='reply')
