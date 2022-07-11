@@ -13,6 +13,7 @@ class Topics(models.Model):
 
 class Messages(models.Model):
     owner = models.ForeignKey(Users, on_delete=models.CASCADE)
+    topic = models.ForeignKey(Topics, on_delete=models.CASCADE)
     message = models.CharField(max_length=300)
 
 
