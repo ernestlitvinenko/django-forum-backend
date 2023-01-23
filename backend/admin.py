@@ -1,12 +1,20 @@
 from typing import Dict, TypeVar
 
 from django.contrib import admin
+from import_export.admin import ExportActionMixin
+
 from .models import AVAILABLE_MODELS
 
 AdminModel = TypeVar('AdminModel')
 
+#
+# def export_to_xlsx(model, request: WSGIRequest, queryset: QuerySet, *args, **kwargs):
+#     print(model.__name__)
+#     print(request.)
+#     print(queryset)
 
-class Topics(admin.ModelAdmin):
+
+class Topics(ExportActionMixin, admin.ModelAdmin):
     list_display = ('owner', 'topic_name')
 
 

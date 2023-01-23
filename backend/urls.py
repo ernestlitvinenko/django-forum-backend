@@ -6,7 +6,7 @@ from .views import (GetTopicListView,
 
 urlpatterns = [
     path('get-topics-list', GetTopicListView.as_view()),
-    path('get-topic', ThreadView.as_view()),
+    path('get-topic/<idx>', ThreadView.as_view()),
     path('create-topic', CreateTopicView.as_view()),
     path('create-message', CreateMessageView.as_view())
 ]

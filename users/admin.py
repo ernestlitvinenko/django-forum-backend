@@ -23,7 +23,7 @@ class CustomUserAdmin(UserAdmin):
     @admin.display(description="Topics which user has created")
     def topics(self, obj):
         topics_names = [f'<li><a href="/admin/backend/topics/{x.id}/change/">{x.topic_name}</a></li>' for x in
-                        Topics.objects.filter(owner=obj)]
+                        Topics.objects.filter(owner=obj)[:5]]
         return format_html(f'<ul>{" ".join(topics_names)}</ul>')
 
     add_fieldsets = (
